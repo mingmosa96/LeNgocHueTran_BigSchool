@@ -1,4 +1,4 @@
-﻿using LeNgocHueTran_BigSchool.Models;
+using LeNgocHueTran_BigSchool.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

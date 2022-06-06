@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using LeNgocHueTran_BigSchool.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace LeNgocHueTran_BigSchool.Controllers
 {
@@ -10,7 +13,14 @@ namespace LeNgocHueTran_BigSchool.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            BigSchoolContext context = new BigSchoolContext();
+            var upcomingCourse = context.Course.Where(p => p.DateTime > DateTime.Now).OrderBy(p => p.DateTime).ToList();
+            foreach( Course i in upcomingCourse)
+            {
+                ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(i.LecturerId);
+                i.Name = user.Name;
+            }
+            return View(upcomingCourse);
         }
 
         public ActionResult About()

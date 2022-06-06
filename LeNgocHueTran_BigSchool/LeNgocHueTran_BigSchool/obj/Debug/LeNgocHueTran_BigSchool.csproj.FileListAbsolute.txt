@@ -106,3 +106,7 @@ D:\study\LTW TH\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\obj\Debug\LeNgoc
 D:\study\LTW TH\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\obj\Debug\LeNgocHueTran_BigSchool.csproj.CopyComplete
 D:\study\LTW TH\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\obj\Debug\LeNgocHueTran_BigSchool.dll
 D:\study\LTW TH\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\obj\Debug\LeNgocHueTran_BigSchool.pdb
+D:\study\GitHub\LeNgocHueTran\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\obj\Debug\LeNgocHueTran_BigSchool.csproj.AssemblyReference.cache
+D:\study\GitHub\LeNgocHueTran\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\obj\Debug\LeNgocHueTran_BigSchool.csproj.CoreCompileInputs.cache
+D:\study\GitHub\LeNgocHueTran\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\obj\Debug\LeNgocHueTran_BigSchool.dll
+D:\study\GitHub\LeNgocHueTran\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\obj\Debug\LeNgocHueTran_BigSchool.pdb

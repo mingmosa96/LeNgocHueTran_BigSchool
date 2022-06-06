@@ -21,10 +21,19 @@ namespace LeNgocHueTran_BigSchool.Controllers
             return View(objCourse);
         }
 
+        [Authorize]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Course objCourse)
         {
             BigSchoolContext context = new BigSchoolContext();
+
+            ModelState.Remove("LecturerId");
+            if(!ModelState.IsValid)
+            {
+                objCourse.listCategory = context.Category.ToList();
+                return View("Create", objCourse);
+            }
 
             ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
             objCourse.LecturerId = user.Id;

@@ -9,6 +9,17 @@
 </div>
 
 <div class="row">
+    <ul>
+        @foreach (var course in Model)
+         {
+            <li>
+                @course.DateTime.ToString("dd/MM/yyy HH:mm") - @course.Name
+            </li>
+         }
+    </ul>
+</div>
+
+<div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>
         <p>

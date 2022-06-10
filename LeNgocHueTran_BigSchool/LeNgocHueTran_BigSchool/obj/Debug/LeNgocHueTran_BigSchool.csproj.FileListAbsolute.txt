@@ -214,3 +214,9 @@ D:\LeNgocHueTran\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\obj\Debug\LeNgo
 D:\LeNgocHueTran\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\obj\Debug\LeNgocHueTran_BigSchool.csproj.CopyComplete
 D:\LeNgocHueTran\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\obj\Debug\LeNgocHueTran_BigSchool.dll
 D:\LeNgocHueTran\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\obj\Debug\LeNgocHueTran_BigSchool.pdb
+D:\LeNgocHueTran\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\bin\System.Net.Http.Formatting.dll
+D:\LeNgocHueTran\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\bin\System.Web.Http.dll
+D:\LeNgocHueTran\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\bin\System.Web.Http.WebHost.dll
+D:\LeNgocHueTran\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\bin\System.Net.Http.Formatting.xml
+D:\LeNgocHueTran\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\bin\System.Web.Http.xml
+D:\LeNgocHueTran\LeNgocHueTran_BigSchool\LeNgocHueTran_BigSchool\bin\System.Web.Http.WebHost.xml

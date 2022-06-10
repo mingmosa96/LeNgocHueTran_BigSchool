@@ -25,6 +25,7 @@ namespace LeNgocHueTran_BigSchool.Models
 
         public virtual Category Category { get; set; }
 
+
         public string Name;
 
         public List<Category> listCategory = new List<Category>();

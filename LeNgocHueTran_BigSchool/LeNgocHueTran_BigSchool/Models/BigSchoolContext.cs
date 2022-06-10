@@ -12,6 +12,7 @@ namespace LeNgocHueTran_BigSchool.Models
         {
         }
 
+        public virtual DbSet<Attendance> Attendance { get; set; }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Course> Course { get; set; }
 

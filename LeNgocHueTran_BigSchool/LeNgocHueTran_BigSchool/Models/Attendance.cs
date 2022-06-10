@@ -17,5 +17,7 @@ namespace LeNgocHueTran_BigSchool.Models
         [Key]
         [Column(Order = 1)]
         public string Attendee { get; set; }
+
+        public virtual Course Course { get; set; }
     }
 }

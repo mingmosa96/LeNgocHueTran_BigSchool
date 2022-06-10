@@ -22,6 +22,11 @@ namespace LeNgocHueTran_BigSchool.Models
                 .HasMany(e => e.Course)
                 .WithRequired(e => e.Category)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Course>()
+                .HasMany(e => e.Attendance)
+                .WithRequired(e => e.Course)
+                .WillCascadeOnDelete(false);
         }
     }
 }

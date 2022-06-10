@@ -15,6 +15,7 @@ namespace LeNgocHueTran_BigSchool.Models
             Course = new HashSet<Course>();
         }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]

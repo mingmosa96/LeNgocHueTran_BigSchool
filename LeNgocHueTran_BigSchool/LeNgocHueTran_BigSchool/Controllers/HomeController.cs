@@ -15,11 +15,12 @@ namespace LeNgocHueTran_BigSchool.Controllers
         {
             BigSchoolContext context = new BigSchoolContext();
             var upcomingCourse = context.Course.Where(p => p.DateTime > DateTime.Now).OrderBy(p => p.DateTime).ToList();
-            foreach( Course i in upcomingCourse)
+            foreach(Course i in upcomingCourse)
             {
                 ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(i.LecturerId);
                 i.Name = user.Name;
             }
+
             return View(upcomingCourse);
         }
 

@@ -1,11 +1,11 @@
-﻿using LeNgocHueTran_BigSchool.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity.Owin;
+using LeNgocHueTran_BigSchool.Models;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace LeNgocHueTran_BigSchool.Controllers
 {
@@ -20,7 +20,6 @@ namespace LeNgocHueTran_BigSchool.Controllers
 
             return View(objCourse);
         }
-
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -34,14 +33,14 @@ namespace LeNgocHueTran_BigSchool.Controllers
                 objCourse.listCategory = context.Category.ToList();
                 return View("Create", objCourse);
             }
-
+            
             ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
             objCourse.LecturerId = user.Id;
 
             context.Course.Add(objCourse);
             context.SaveChanges();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index","Home");
         }
     }
 }

@@ -80,6 +80,65 @@ namespace LeNgocHueTran_BigSchool.Controllers
             context.SaveChanges();
             return RedirectToAction("Mine");
         }
-        
+        public void setViewBag(int? selectedId = null)
+        {
+            var model = new Course();
+            ViewBag.CategoryId = new SelectList(model.ListAll(), "Id", "Name", selectedId);
+        }
+        public ActionResult EditMine(int Id)
+        {
+            BigSchoolContext context = new BigSchoolContext();
+            var model = context.Course.Find(Id);
+            setViewBag(model.CategoryId);
+            return View(model);
+        }
+        [Authorize]
+        [HttpPost]
+        public ActionResult EditMine(Course model)
+        {
+            BigSchoolContext context = new BigSchoolContext();
+            setViewBag(model.CategoryId);
+            var updateCourses = context.Course.Find(model.Id);
+            updateCourses.DateTime = model.DateTime;
+            updateCourses.LectureName = model.LectureName;
+            updateCourses.CategoryId = model.CategoryId;
+            var id = context.SaveChanges();
+            if (id > 0)
+                return RedirectToAction("ListMine");
+            else
+            {
+                ModelState.AddModelError("", "Can't save to database");
+                return View(model);
+            }
+        }
+
+        public ActionResult LectureImGoing()
+        {
+            ApplicationUser currentUser =
+           System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>()
+           .FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
+            BigSchoolContext context = new BigSchoolContext();
+
+            var listFollwee = context.Following.Where(p => p.FollowerId == currentUser.Id).ToList();
+
+            var listAttendances = context.Attendance.Where(p => p.Attendee == currentUser.Id).ToList();
+
+            var courses = new List<Course>();
+            foreach (var course in listAttendances)
+            {
+                foreach (var item in listFollwee)
+                {
+                    if (item.FolloweeId == course.Course.LecturerId)
+                    {
+                        Course objCourse = course.Course;
+                        objCourse.LectureName =
+                        System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>()
+                        .FindById(objCourse.LecturerId).Name;
+                        courses.Add(objCourse);
+                    }
+                }
+            }
+            return View(courses);
+        }
     }
 }

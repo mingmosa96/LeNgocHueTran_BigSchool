@@ -5,6 +5,7 @@ namespace LeNgocHueTran_BigSchool.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("Course")]
     public partial class Course
@@ -33,10 +34,21 @@ namespace LeNgocHueTran_BigSchool.Models
         public virtual ICollection<Attendance> Attendance { get; set; }
 
         public virtual Category Category { get; set; }
+
         public string Name;
 
         public string LectureName;
 
         public List<Category> listCategory = new List<Category>();
+
+        public List<Category> ListAll()
+        {
+            BigSchoolContext context = new BigSchoolContext();
+            return context.Category.ToList();
+        }
+
+        public bool isLogin = false;
+        public bool isShowGoing = false;
+        public bool isShowFollow = false;
     }
 }
